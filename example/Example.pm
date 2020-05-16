@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Dancer2;
 
+
 get '/' => sub
 {
     template 'index' => { 'title' => 'Authen::FIDO Demo' };

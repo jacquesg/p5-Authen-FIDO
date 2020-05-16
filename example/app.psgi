@@ -6,6 +6,12 @@ use FindBin;
 use lib "$FindBin::Bin";
 
 use Example;
+use API;
+use Plack::Builder;
 
-Example->to_app;
+builder
+{
+	mount '/'    => Example->to_app;
+	mount '/api' => API->to_app;
+};
 
